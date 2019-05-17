@@ -1,0 +1,25 @@
+{
+    //必須
+    "manifest_version": 2,          //manifestバージョン
+    "name": "sadminLinkMaker",  //chrome拡張の名前
+    "version": "1", 
+    "browser_action": {
+        "default_icon": "icon_128.png",
+        "default_popup": "popup.html"
+      },                //chrome拡張のバージョン
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "tabs",
+        "https://*/",
+        "contextMenus",
+        "storage"
+    ],
+    "icons": {
+        "16": "icon_16.png",
+        "48": "icon_48.png",
+        "128": "icon_128.png"
+      }
+}
