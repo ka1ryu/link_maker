@@ -18,23 +18,22 @@ $('#set').on('click', function rightClick(title, url, id) {
 })
 
 
-$('#btn_id').on('click', function setUrl(){
-    var url = $('#text').val()
-    chrome.storage.sync.set(
-        {
-          "value1": url
-        }
-    );
-})
-
 function setUrl(title, url, id) {
     // background.jsに保存内容を送る
     chrome.runtime.sendMessage({
-        title: title,
-        url  : url,
-        id   : id
+        title : title,
+        url : url,
+        id : id
     }, function(response) {
         console.log(response);
         alert(response);
     });
+    console.log("seturlも呼ばれている");
 }
+
+$('#save').on('click', function () {
+        var theValue = "https://qiita.com/";
+        chrome.storage.local.set({'hogehoge': theValue}, function(){
+            console.log('Settings saved');
+            });
+    })
