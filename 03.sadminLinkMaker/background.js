@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener(
         type      : "normal",
         contexts  : ["selection"],
         parentId  : "hikkoshi",
-        id        : request.title,
+        id        : request.id,
         });
       // 3
       return true;
