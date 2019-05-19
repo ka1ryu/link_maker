@@ -31,30 +31,41 @@ chrome.runtime.onMessage.addListener(
         type      : "normal",
         contexts  : ["selection"],
         parentId  : "hikkoshi",
-        id        : request.id,
-        onclick   : function (info){
-          var jumpUrl = request.url + info.selectionText;
-          window.open(jumpUrl);
-        }
+        id        : request.title,
         });
       // 3
       return true;
   }
 );
 
+// グローバル変数
+var baseUrl = "";
 
-/*
-chrome.contextMenus.onClicked.addListener(function (info){
-  var menu = info.menuItemId;
-  var sadminNum = info.selectionText;
-  if(menu == "move"){
-      var sadminUrl = "" + sadminNum;
-      window.open(sadminUrl);
+// 右クリックによるイベント処理
+chrome.contextMenus.onClicked.addListener(function jumpUrl (info){ // click検知
+  var menu = info.menuItemId;             // 右クリックID取得
+  var userText = info.selectionText;     // テキスト確保
+
+  getUserData(menu).then(function(){
+    console.log(baseUrl);
+    if(baseUrl != ""){
+      var userUrl = baseUrl + userText;
+      window.open(userUrl);
+    } else {
+      console.log("ポップアップからurlを設定してください。");
     }
-    else {
-      var sadminUrl = "" + sadminNum;
-      window.open(sadminUrl);
-    }
-  }
-);
-*/
+  });
+});
+
+// localstorageからユーザー登録のURL取得
+var getUserData = function(key){
+  return new Promise(function(resolve){
+    // local storage から取得
+    chrome.storage.local.get(function(items){
+      console.log(items["hogehoge"]);
+      baseUrl = items[key];
+      resolve();
+    });
+  });
+};
+
