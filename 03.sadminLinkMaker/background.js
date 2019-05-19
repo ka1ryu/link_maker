@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener(
         type      : "normal",
         contexts  : ["selection"],
         parentId  : "hikkoshi",
-        id        : "hogehoge",
+        id        : request.title,
         });
       // 3
       return true;
@@ -41,6 +41,7 @@ chrome.runtime.onMessage.addListener(
 // グローバル変数
 var baseUrl = "";
 
+// 右クリックによるイベント処理
 chrome.contextMenus.onClicked.addListener(function jumpUrl (info){ // click検知
   var menu = info.menuItemId;             // 右クリックID取得
   var userText = info.selectionText;     // テキスト確保
@@ -56,7 +57,7 @@ chrome.contextMenus.onClicked.addListener(function jumpUrl (info){ // click検�
   });
 });
 
-
+// localstorageからユーザー登録のURL取得
 var getUserData = function(key){
   return new Promise(function(resolve){
     // local storage から取得
