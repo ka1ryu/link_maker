@@ -1,7 +1,7 @@
 {
     //必須
-    "manifest_version": 2,          //manifestバージョン
-    "name": "sadminLinkMaker",  //chrome拡張の名前
+    "manifest_version": 1.0.1,          //manifestバージョン
+    "name": "Usergram Extention",  //chrome拡張の名前
     "version": "1", 
     "browser_action": {
         "default_icon": "icon_128.png",

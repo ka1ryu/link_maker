@@ -39,7 +39,7 @@ $('#save').on('click', function () {
     chrome.storage.local.set(titleAndUrl, function(){
         console.log('Settings saved');
     });
-
+    location.reload()
     // 
     for(i=0; i<inputTitle.length; i++){
         if(inputTitle[i]){ // 要素が存在すれば右クリック作成
@@ -73,22 +73,3 @@ $('#delete').on('click', function(){
         });
     }
 })
-
-
-/* ゴミ箱
-// 右クリック作成処理
-$('#set').on('click', function rightClick() {
-    // local_storageを確認 既にあったらreload
-    // フロントでバリデートどうするか
-    var inputTitle = $(".titleBox").map(function (index, el) {
-        return $(this).val();
-    });
-    for(i=0; i<inputTitle.length; i++){
-        if(inputTitle[i]){ // 要素が存在すれば右クリック作成
-            id = i+1
-            setUrl(inputTitle[i], id);
-            console.log("保存しようとはしている");
-        }
-    }
-})
-*/

@@ -2,29 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>LinkMaker</title>
+    <title>Usergram Extention</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.2/css/bulma.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <a href="#" class="button" id="save">save</a>
-    </br>
-
-    <div class="menu1">
-      <input  id="title1" class="titleBox" type="text" name="text" value="" />
-      <input  id="url1" class="urlBox" type="text" name="text" value="" />  
-    </div>
-    <div class="menu2">
-      <input  id="title2" class="titleBox" type="text" name="text" value="" />
-      <input  id="url2" class="urlBox" type="text" name="text" value="" />  
-    </div>
-    <div class="menu3">
-      <input  id="title3" class="titleBox" type="text" name="text" value="" />
-      <input  id="url3" class="urlBox" type="text" name="text" value="" />  
-    </div>
-
-    <a href="#" class="button" id="delete">DELETE</a>
+        <section class="hero head">
+                <h1 class="title">
+                  Usergram Extention
+                </h1>
+          </section>
+      <div class="form">
+        <ul>
+          <li class="menu">
+            <label for="title">Slot 1</label>
+            <input  id="title1" class="titleBox" type="text" name="text" value="" />
+          </li>
+          <li>
+            <label for="url">Url</label>
+            <input  id="url1" class="urlBox" type="text" name="text" value="" />
+          </li>  
+        </ul>
+        <ul>
+            <li class="menu">
+              <label for="title">Slot 2</label>
+              <input  id="title2" class="titleBox" type="text" name="text" value="" />
+            </li>
+            <li>
+              <label for="url">Url</label>
+              <input  id="url2" class="urlBox" type="text" name="text" value="" />
+            </li>  
+          </ul>
+          <ul>
+              <li class="menu">
+                <label for="title">Slot 3</label>
+                <input  id="title3" class="titleBox" type="text" name="text" value="" />
+              </li>
+              <li>
+                <label for="url">Url</label>
+                <input  id="url3" class="urlBox" type="text" name="text" value="" />
+              </li>  
+            </ul>
+        </div>
+        <div class="button-zone">
+          <a href="#" class="button" id="save">save</a>
+          <a href="#" class="button" id="delete">DELETE</a>
+        </div>
   </body>
   <script src="jquery-3.3.1.min.js"></script>
   <script src="popup.js"></script>

@@ -1,9 +1,51 @@
 body {
-    width: 400px;
-    height: 300px; 
+    width: 200px;
+    height: 350px; 
     margin: 0 auto;
     background-color: #fff;
     min-width: 357px;
     overflow-x: hidden;
     font-family: "Helvetica Neue",Helvetica,"Hiragino Kaku Gothic Pro","Lucida Grande",Verdana,Arial,Meiryo,"メイリオ",sans-serif;
+}
+
+.head {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 18px;
+    background-color: #25aeac;
+}
+
+.title {
+    color: white;
+}
+
+.form {
+    margin-top: 5px;
+}
+
+label {
+    margin-right: 10px;
+    width:40px;
+    float: left;
+}
+
+ul {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+ul li {
+    margin-top: 8px;
+}
+
+.button {
+    margin-left: 22px;
+}
+
+.button-zone {
+    margin-top: 15px;
 }
